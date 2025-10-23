@@ -7,16 +7,23 @@
 
   Placeholder : levée d'erreur pour indiquer que l'exercice doit être implémenté.
 */
+
 function multiplication(a, b) {
   // Vérifier le nombre d'arguments
-  if (arguments.length !== 2) return undefined;
+  if (arguments.length !== 2) {
+    return undefined;
+  }
 
-  // Vérifier les types
-  if (typeof a !== 'number' || typeof b !== 'number') return undefined;
-  if (isNaN(a) || isNaN(b)) return undefined;
+  // Vérifier les types des arguments
+  if (typeof a !== 'number' || typeof b !== 'number') {
+    return undefined;
+  }
 
-  return a * b;
+  // Calculer le résultat
+  const result = a * b;
+
+  // Corriger le cas -0 pour retourner 0
+  return Object.is(result, -0) ? 0 : result;
 }
 
-// Ne pas modifier la ligne ci-dessous
-module.exports = { multiplication }
+module.exports = { multiplication };

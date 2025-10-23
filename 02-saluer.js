@@ -1,27 +1,12 @@
-/*
-  Énoncé :
-  Écris une fonction nommée `saluer` qui prend un paramètre `nom`.
-  - Si `nom` est fourni, afficher : "Bonjour, [nom]"
-  - Si aucun nom n'est fourni, afficher : "Bonjour, inconnu"
+function multiplication(a, b) {
+  // Vérifier le nombre d'arguments
+  if (arguments.length !== 2) return undefined;
 
-  Signature attendue :
-    function saluer(nom) -> void
+  // Vérifier les types
+  if (typeof a !== 'number' || typeof b !== 'number') return undefined;
 
-  Placeholder : levée d'erreur pour indiquer que l'exercice doit être implémenté.
-*/
-function saluer(nom) {  
-  if(nom){
-    console.log("Bonjour, "+nom)
-  }
-  else{
-    console.log("Bonjour, inconnu")
-  }
+  // Retourner le résultat
+  return a * b;
 }
-saluer()
 
-
-// Ne pas modifier la ligne ci-dessous
-module.exports = { saluer }
-
-
-
+module.exports = { multiplication };
